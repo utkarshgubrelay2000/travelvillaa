@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Travel Villa</title>
+<style>
+    body{
+        background:url("./images/ball-shaped-blur-close-up-focus-346885.jpg") ;
+        background-attachment: fixed;
+     background-size: cover;
+    }
+    li{
+        margin: 3vh;
+        font-family: 'Franklin Gothic Medium';
+        font-size: larger;
+    }
+    a{
+        color: black;
+    }
+    @media (max-width: 360px){
+ .navbar{
+     display: none;
+ }}
+    @media (min-width: 360px){
+ .backdrop{
+     display: none;
+ }}
+a{
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light" style="background-color: black ; color :white">
+        <ul style="list-style-type: none;" >
+            <li style="float: left;">
+                Home
+            </li>
+            <li style="float: right;">
+               <a href="/profile">
+                User
+            </a>
+            <li style="float: right;">
+               <a href="/chat">
+                Chat with us
+            </a>
+            </li>
+            <li style="float: right;">
+               <a href="/travel">
+                plan A trip
+            </a>
+            </li>
+            <li style="float: right; ">
+                <% if(sign=="logout"){ %>
+                    <a href="/logout"> logout</a>
+                    <% }%>
+                <% if(sign!="logout"){ %>
+                 <a href="/signup"> Travel with us </a> 
+                    <% }%>
+            </li>
+            
+        </ul>
+    </nav>
+    <div class="backdrop" style="background-color: rgba(164, 231, 230, 73%) ;">
+        <select name="backdrop" id="">
+<option value="back"> Menu</option>
+<option value="back"> Travel</option>
+<option value="back"> Contact us</option>
+
+      </select>
+    </div>
+<%=user%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

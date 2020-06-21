@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>signup</title>
+<link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+<body>
+    <h1 style=" text-align: center; height: 10vh;  ;background-color: <%= alert%>; "> <%=welcome%></h1>
+    <button style=" color: white; position: fixed; margin-left: 50%; width: 20vh; padding: 0; font-style: none; background-color: white;">
+        <a href="/login" style="text-decoration: none;">  <span style="background-color: black; color: white; border-radius: 3px;">
+            Log
+        </span> 
+             <span style="background-color: white; color: black;">
+                 in
+             </span>
+        </a> 
+    </button>
+    <div style="background-color: white; height: 100vh;" class="div div1">
+        <h2>Fill up the details</h2>
+        <form action="/signup" method="post">
+            <div style="width: 50%; display: table-cell; text-align: center;">
+                <label for="" > Name-:</label> <br> <br>
+                <label for=""> Email-:</label> <br> <br>
+                <label for=""> password-:</label> <br> <br>
+            </div>
+            <div style="width: 50%; display: table-cell; text-align: center;">
+                
+                <input type="text" name="usrname" placeholder="username"> <br> <br>
+                <input type="text" name="email" placeholder="email"> <br> <br>
+                <input type="text" name="password" placeholder="password"> <br> <br>
+            </div>
+    <a href="">        <button type="submit">Submit</button> <br> <br>
+ </a>
+         </form>
+    </div>
+
+    <div style="background-color: black; height: 100vh" class="div div2">
+        <div class="passportDiv"> <br>
+            <h2>Login in with</h2>
+        <a href="/google">
+        <button type="submit" class="button" style="background-color: #49f ; color: white;" > Google</button> <br>
+        </a>
+        <a href="/facebook" > <br>
+        <button type="submit" class="button" style="background-color: #46b; color: white;"> Facebook</button> <br>
+        </a>
+        <a href="/Linkedin"> <br>
+        <button type="submit" class="button" style="background-color: white; color: #07b;"> Linkde <span style="background-color: #07b; color: white;">in</span></button>
+        </a>
+        </div>
+    </div>
+
+<script>
+    
+</script>
+</body>
+</html>

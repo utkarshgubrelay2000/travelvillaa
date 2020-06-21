@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+<title>chat room</title>
+</head>
+<style>
+    input,button{
+        position: relative;
+        top: 200px;
+        background-color: beige;
+        box-shadow: 2px 2px 2px 2px black;
+    }
+    body{
+        background-color: black;
+        color: white;
+    }
+    div{
+        height: 60vh;
+        width: 100%;
+    }
+    .image{
+        height: 50vh;
+        width: 100vh;
+        position: relative;
+        left: 20%;
+        background-attachment: fixed;
+        position: fixed;
+    }
+    @media (max-height:400vh){
+        .image{
+            height: 60vh;
+            width: 120vh;
+        }
+    }
+    .chatbox{
+        position: fixed;
+        height: 80vh;
+    }
+    #feed,#output{
+  position: relative;
+left: 22%;      
+font-family: 'Franklin Gothic Medium';
+font-size: x-large;
+z-index: 0;
+    }
+    .input{
+        position: relative;
+        
+        left: 20%;
+        height: 6vh;
+        z-index: 1;
+        top: 24vh;
+    }
+    input{
+        width: 110vh;
+        height: 5vh;
+        border-style: double;
+        border-radius: 20vh;
+        background-color: gray;
+        
+    }
+    button{
+       color: black;
+       background-color: white;
+       border-radius: 4vh;
+        width: 10vh;
+        height: 5vh;
+    }
+</style>
+<!--
+
+    <div id="output" style="display: inline-block;"></div>
+    <h6 id="feed" style="display: inline-block;"> 
+        <h6 id="feede"style="display: inline-block;" > </h6>
+        
+        
+    </h6>
+    <input type="text" name="typer" id="typer">
+    <input type="text" name="message" id="message">
+    <button id="btn" >osubmit</button>
+-->
+
+<body>
+    <div>
+
+        <div class="chatbox"  style="opacity: 40%;">
+            <img src="./images/high-angle-photography-of-mountain-pathway-2082949.jpg" class="image"  alt="" srcset="">
+            <div id='output' >
+                <h4 id="feed" style="margin: 2vh; padding: 2vh; border-radius: 2vh;  background-color: grey; color: darkgray; width: 10vh; margin-left: -50vh; "> 
+                    
+                </h4>
+            </div>
+            
+        </div>
+        <div class="input">
+            <input type="text" placeholder="type your message" id="message" > <label for="">   <button id="btn" >></button>  </label>
+        </div>
+    </div>
+  
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.js">
+    // this is the link to connect to socket io
+    </script>
+<script>
+    var socket=io.connect('localhost:3030')
+var message=document.getElementById("message")
+var output=document.getElementById("output")
+var typer=document.getElementById("typer")
+var btn=document.getElementById("btn")
+var feed=document.getElementById("feed")
+
+feed.innerHTML="";
+btn.addEventListener('click',()=>{
+
+
+socket.emit('chat',{
+    text:message.value
+})
+
+
+
+})
+    socket.on('chat',(data)=>{
+        feed.innerHTML+=data.text+`<br>`
+        console.log(data.text);
+})
+
+ 
+</script>
+</body>
+</html>

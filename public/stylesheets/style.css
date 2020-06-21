@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+  }
+
+  .div{
+     
+      width: 110vh;
+      display:table-cell;
+  }
+  .div1{
+      color: black;
+      font-family: Georgia;
+      font-size: 4vh;
+  }
+  form{
+      text-align: center;
+      border: darkgray solid 2px;
+      height: 50vh;
+      border-bottom: 0;
+
+  }
+  label{
+      padding: 10%;
+      margin: 15%;
+      position: relative;
+      left: 20%;   
+  }
+  button{
+      padding: 2vh;
+      position: relative;
+      top: 28vh;
+      left: -6vh;
+      background-color: black;
+      width: 23vh;
+      font-size: xx-large;
+      font: bolder;
+      border-radius: 2vh;
+      color: white;
+      font-family: 'Courier New';
+  }
+  input{
+      border: darkgrey 1vh solid;
+      position: relative;
+      left: 5vh;   
+   color: black;
+      padding-top: 3vh;
+      background-color: lightgrey;
+ padding-left:2vh ;
+
+  }
+
+  label,input{
+      position: relative;
+      top: 30vh;
+  }
+ .div2{
+     color: white;
+     text-align: center;
+
+ }
+ .passportDiv{
+     display: inline;
+ }
+ .button{
+  padding: 2vh; 
+      width: 30%;
+      font-size: 3vh;
+      font: bolder;
+      border-radius: 2vh;
+      left: 6vh;
+ }
